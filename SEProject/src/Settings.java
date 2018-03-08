@@ -24,7 +24,7 @@ public class Settings {
 	public void setWeightUnit() {
             System.out.println();
 	}
-
+	
 	public void setHeightUnit() {
             System.out.println();
 	}
