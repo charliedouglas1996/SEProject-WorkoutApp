@@ -15,9 +15,13 @@ public class SEProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         // TODO code application logic here
         
         System.out.println("whatup..ok");
+
+        System.out.println("hello");
+
     }
     
 }
