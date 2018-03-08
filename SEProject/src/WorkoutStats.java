@@ -11,18 +11,10 @@ public class WorkoutStats {
 		return this.totalTime;
 	}
 
-	/**
-	 * 
-	 * @param c
-	 */
 	public void setCount(int c) {
 		this.count = c;
 	}
 
-	/**
-	 * 
-	 * @param exerciseDuration
-	 */
 	public void setTotalTime(int exerciseDuration) {
 		this.totalTime = exerciseDuration;
 	}

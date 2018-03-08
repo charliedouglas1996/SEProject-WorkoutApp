@@ -1,84 +1,66 @@
+
+import java.util.*;
+
 public class Workout {
 
-	private String workoutName;
-	private boolean workoutType;
-	private String workoutDescription;
-	private int duration;
+    private String workoutName;
+    private boolean workoutType;
+    private String workoutDescription;
+    private int duration;
+    private ArrayList<Exercise> exerciseList;
 
-	/**
-	 * 
-	 * @param name
-	 * @param type
-	 * @param descrip
-	 * @param time
-	 */
-	public Workout(String name, boolean type, String descrip, int time) {
-		// TODO - implement Workout.Workout
-		throw new UnsupportedOperationException();
-	}
+    public Workout(String name, boolean type, String descrip, int time) {
+        setWorkoutName(name);
+        setWorkoutType(type);
+        setWorkoutDescription(descrip);
+        setDuration(time);
+    }
 
-	public String getWorkoutName() {
-		return this.workoutName;
-	}
+    public String getWorkoutName() {
+        return this.workoutName;
+    }
 
-	public String getWorkoutType() {
-		// TODO - implement Workout.getWorkoutType
-		throw new UnsupportedOperationException();
-	}
+    public boolean getWorkoutType() {
+        return this.workoutType;
+    }
 
-	public String getWorkoutDescription() {
-		return this.workoutDescription;
-	}
+    public String getWorkoutDescription() {
+        return this.workoutDescription;
+    }
 
-	public int getDuration() {
-		return this.duration;
-	}
+    public int getDuration() {
+        return this.duration;
+    }
 
-	/**
-	 * 
-	 * @param name
-	 */
-	public void setWorkoutName(String name) {
-		this.workoutName = name;
-	}
+    public void setWorkoutName(String name) {
+        this.workoutName = name;
+    }
 
-	public void setWorkoutType() {
-		// TODO - implement Workout.setWorkoutType
-		throw new UnsupportedOperationException();
-	}
+    public void setWorkoutType(boolean type) {
+        this.workoutType = type;
+    }
 
-	/**
-	 * 
-	 * @param descrip
-	 */
-	public void setWorkoutDescription(String descrip) {
-		this.workoutDescription = descrip;
-	}
+    public void setWorkoutDescription(String descrip) {
+        this.workoutDescription = descrip;
+    }
 
-	/**
-	 * 
-	 * @param time
-	 */
-	public void setDuration(int time) {
-		this.duration = time;
-	}
+    public void setDuration(int time) {
+        this.duration = time;
+    }
 
-	/**
-	 * 
-	 * @param ex
-	 */
-	public void addWExercise(Exercise ex) {
-		// TODO - implement Workout.addWExercise
-		throw new UnsupportedOperationException();
-	}
+    public void addWExercise(Exercise ex) {
+        exerciseList.add(ex);
+    }
 
-	/**
-	 * 
-	 * @param ex
-	 */
-	public void removeWExercise(Exercise ex) {
-		// TODO - implement Workout.removeWExercise
-		throw new UnsupportedOperationException();
-	}
+    public void removeWExercise(Exercise ex) {
+        exerciseList.remove(ex);
+    }
+
+    public void printExerciseList() {
+        System.out.println("Current exercises within this workout are:");
+        for(int i = 0; i < exerciseList.size(); i++){
+            System.out.println(exerciseList.get(i).getExerciseName());
+        }
+    }
 
 }
