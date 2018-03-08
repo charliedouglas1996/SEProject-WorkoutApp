@@ -57,6 +57,7 @@ public class Workout {
     }
 
     public void printExerciseList() {
+        System.out.println("Current exercises within this workout are:");
         for(int i = 0; i < exerciseList.size(); i++){
             System.out.println(exerciseList.get(i).getExerciseName());
         }
