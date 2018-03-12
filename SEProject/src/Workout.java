@@ -13,7 +13,7 @@ public class Workout {
         setWorkoutName(name);
         setWorkoutType(type);
         setWorkoutDescription(descrip);
-        setDuration(time);
+        setWorkoutDuration(time);
     }
 
     public String getWorkoutName() {
@@ -28,7 +28,7 @@ public class Workout {
         return this.workoutDescription;
     }
 
-    public int getDuration() {
+    public int getWorkoutDuration() {
         return this.duration;
     }
 
@@ -44,7 +44,7 @@ public class Workout {
         this.workoutDescription = descrip;
     }
 
-    public void setDuration(int time) {
+    public void setWorkoutDuration(int time) {
         this.duration = time;
     }
 
@@ -62,5 +62,13 @@ public class Workout {
             System.out.println(exerciseList.get(i).getExerciseName());
         }
     }
-
+    
+    public void printWorkoutInfo(Workout w){
+        System.out.println("-----WORKOUT-----");
+        System.out.println("Name: "+w.getWorkoutName());
+        System.out.println("Type: "+w.getWorkoutType());
+        System.out.println("Description: "+w.getWorkoutDescription());
+        System.out.println("Duration:" +w.getWorkoutDuration());
+        w.printExerciseList();
+    }
 }

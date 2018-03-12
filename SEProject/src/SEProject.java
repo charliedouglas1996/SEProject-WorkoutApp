@@ -62,13 +62,18 @@ public class SEProject {
         {
             user.addWorkout();
         }
+
         else if (option==3)
         {
-            w = user.selectWorkout();
+            System.out.println("Select a workout by entering a number");
+            int n  = inputInt();
+            w = user.selectWorkout(n);
             user.editWorkout(w);
         }
         else if (option==4)
         {
+            System.out.println("Select a workout by entering a number");
+            int n  = inputInt();
             w = user.selectWorkout();
             user.removeWorkout(w);
         }
@@ -103,12 +108,16 @@ public class SEProject {
         }
         else if (option==3)
         {
-            ex = user.selectExercise();
+            System.out.println("Select a exercise by entering a number");
+            int n  = inputInt();
+            ex = user.selectExercise(n);
             user.editExercise(ex);
         }
         else if (option==4)
         {
-            ex = user.selectExercise();
+            System.out.println("Select a exercise by entering a number");
+            int n  = inputInt();
+            ex = user.selectExercise(n);
             user.removeExercise(ex);
         }
         else if (option==5)
@@ -142,13 +151,13 @@ public class SEProject {
         else if (option==2)
         {
             System.out.println("Please enter a new weight");
-            float wei = inputInt();
+            double wei = inputDouble();
             user.setWeight(wei);
         }
         else if (option==3)
         {
             System.out.println("Please enter a new height");
-            float hei = inputInt();
+            double hei = inputDouble();
             user.setHeight(hei);
         }
         else if (option==4)
@@ -171,17 +180,29 @@ public class SEProject {
     }
     
     // this method converts the input to an integer with the use of an exception to  eb=nsure that the input is an integer
-    public static int inputInt ()
-    {
+    public static int inputInt () {
         int numInput = -1;
-        try 
-        {
+        try {
             numInput = Integer.parseInt(input());
+        } catch (NumberFormatException nfe) {
         }
-        catch (NumberFormatException nfe)
-        { 
-        }
-        
+
         return numInput;
     }
+
+    // this method converts the input to an integer with the use of an exception to  eb=nsure that the input is an integer
+    public static double inputDouble ()
+    {
+        double numInput = -1;
+        try
+        {
+            numInput = Double.parseDouble(input());
+        }
+        catch (NumberFormatException nfe)
+        {
+        }
+
+        return numInput;
+    }
+}
 }

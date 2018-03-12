@@ -5,7 +5,7 @@ public class User {
 	private static User instance=new User();
 	private String userName;
 	private ArrayList<Float> userWeight;
-    private ArrayList<Float> userHeight;
+        private ArrayList<Float> userHeight;
 	private ArrayList<Workout> workoutList;
 	private ArrayList<Exercise> exerciseList;
 
@@ -14,7 +14,6 @@ public class User {
 	private User(){
 
 	}
-
 
 	public static User getInstance() {
 		return instance;
@@ -57,8 +56,10 @@ public class User {
     }
 
 	// adds a created exercise to the list of exercises
-	public void addExercise(Exercise ex) {
-		exerciseList.add(ex);
+	public void createExercise() {
+
+		Exercise exN = new Exercise();
+		exerciseList.add(e);
 	}
 
 	// TODO - edit the details of a specific exercise
@@ -69,8 +70,10 @@ public class User {
 		exerciseList.remove(ex);
 	}
     
-    public Exercise selectExercise(){
-        return null;
+    public Exercise selectExercise(int n){
+		if(n<exerciseList.size()) return exerciseList.get(n);
+		System.out.println("Wrong exercise selected");
+		return null;
     }
 
 	public void displayWorkouts() {
@@ -80,7 +83,7 @@ public class User {
 	}
 
 	public void viewWorkoutInfo(Workout w) {
-		System.out.println(w.getWorkoutName()+", "+w.getWorkoutDescription()+", "+w.getDuration()+", "+w.getWorkoutType());
+		System.out.println(w.getWorkoutName()+", "+w.getWorkoutDescription()+", "+w.getWorkoutDuration()+", "+w.getWorkoutType());
 	}
 
 	public void addWorkout(Workout w) {
