@@ -10,8 +10,8 @@ public class ExerciseStats {
 	 * 
 	 * @param c
 	 */
-	public void setCount(int c) {
-		this.count = c;
+	public void setCount() {
+		this.count += 1;
 	}
 
 }
