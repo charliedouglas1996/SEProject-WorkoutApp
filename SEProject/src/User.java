@@ -3,88 +3,70 @@ import java.util.*;
 
 public class User {
 
-	private User instance;
+	private static User instance=new User();
 	private String userName;
-	private float[] userWeight;
-	private float[] userHeight;
+	private ArrayList<Float> userWeight;
+    private ArrayList<Float> userHeight;
 	private ArrayList<Workout> workoutList;
 	private ArrayList<Exercise> exerciseList;
 
+
 	public User() {
 
-	}
-	public static void main(String[] args){
-		System.out.println("pls work");
+	private User(){}
+
+
+	public static User getInstance() {
+		return instance;
 	}
 
-	public User getInstance() {
-		return this.instance;
-	}
+    public void setName(String name) {
+        userName=name;
+    }
 
 	public String getName() {
-                return null;
+                return userName;
 	}
 
-	public float getWeight() {
-		return 0;
+	public ArrayList<Float> getWeight() {
+		return userWeight;
 	}
 
-	public float getHeight() {
-		return 0;
+    public void addWeight(float weight) {
+        userWeight.add((Float) weight);
+    }
+
+	public ArrayList<Float> getHeight() {
+		return userHeight;
 	}
 
-	public void setName(String name) {
+	public void addHeight(float height) {
+        userHeight.add((Float) height);
 	}
 
-	public void setWeight(float weight) {
-		// TODO - implement User.setWeight
-		throw new UnsupportedOperationException();
-	}
+    // display a list of all exercises
+	public void displayExercises(){
+	    for(int i=0;i<exerciseList.size();i++){
+	        System.out.println("Exercise "+(i+1)+": "+exerciseList.get(i).getExerciseName());
+        }
+    }
 
-	/**
-	 * 
-	 * @param height
-	 */
-	public void setHeight(float height) {
-		// TODO - implement User.setHeight
-		throw new UnsupportedOperationException();
-	}
-
-	public void displayExercises() {
-		// TODO - implement User.displayExercises
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param ex
-	 */
+	// show information about a specific exercise
 	public void viewExerciseInfo(Exercise ex) {
-		// TODO - implement User.viewExerciseInfo
-		throw new UnsupportedOperationException();
+        System.out.println(ex.getExerciseName()+", "+ex.getDescription()+", "+ex.getImage()+", "+ex.getLink()+", "+ex.getNotes()+", "+ex.getEquipment());
+    }
+
+	// adds a created exercise to the list of exercises
+	public void addExercise(Exercise ex) {
+		exerciseList.add(ex);
 	}
 
-	public void addExercise() {
-		// TODO - implement User.addExercise
-		throw new UnsupportedOperationException();
-	}
+	// TODO - edit the details of a specific exercise
+	public void editExercise(Exercise ex) {}
 
-	/**
-	 * 
-	 * @param ex
-	 */
-	public void editExercise(Exercise ex) {
-		// TODO - implement User.editExercise
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param ex
-	 */
+	// removes an exercise from the list of exercises
 	public void removeExercise(Exercise ex) {
-		// TODO - implement User.removeExercise
-		throw new UnsupportedOperationException();
+		exerciseList.remove(ex);
 	}
     
     public Exercise selectExercise(){
@@ -92,44 +74,29 @@ public class User {
     }
 
 	public void displayWorkouts() {
-		// TODO - implement User.displayWorkouts
-		throw new UnsupportedOperationException();
+        for(int i=0;i<workoutList.size();i++){
+            System.out.println("Workout "+(i+1)+": "+workoutList.get(i).getWorkoutName());
+        }
 	}
 
-	/**
-	 * 
-	 * @param w
-	 */
 	public void viewWorkoutInfo(Workout w) {
-		// TODO - implement User.viewWorkoutInfo
-		throw new UnsupportedOperationException();
+		System.out.println(w.getWorkoutName()+", "+w.getWorkoutDescription()+", "+w.getDuration()+", "+w.getWorkoutType());
 	}
 
-	public void addWorkout() {
-		// TODO - implement User.addWorkout
-		throw new UnsupportedOperationException();
+	public void addWorkout(Workout w) {
+		workoutList.add(w);
 	}
 
-	/**
-	 * 
-	 * @param w
-	 */
-	public void editWorkout(Workout w) {
-		// TODO - implement User.editWorkout
-		throw new UnsupportedOperationException();
-	}
+	// TODO - edit a specific workout
+	public void editWorkout(Workout w) {}
 
-	/**
-	 * 
-	 * @param w
-	 */
 	public void removeWorkout(Workout w) {
-		// TODO - implement User.removeWorkout
-		throw new UnsupportedOperationException();
+		workoutList.remove(w);
 	}
 
-	public Workout selectWorkout() {
-		return null;
+	public Workout selectWorkout(int n) {
+        if(n<workoutList.size()) return workoutList.get(n);
+        System.out.println("Wrong workout selected");
+        return null;
 	}
-
 }
