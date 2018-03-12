@@ -1,11 +1,11 @@
 import java. util.*;
 
 public class SEProject {
-    static User user;
+    private static User user;
 
     public static void main(String[] args) {
 
-        user = new User();
+        user =  User.getInstance();
         boolean loop = true;
         
         while(loop)
