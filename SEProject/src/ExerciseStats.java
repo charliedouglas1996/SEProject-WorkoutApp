@@ -2,16 +2,15 @@ public class ExerciseStats {
 
 	private int count;
 
+	public ExerciseStats(){}
+
 	public int getCount() {
 		return this.count;
 	}
 
-	/**
-	 * 
-	 * @param c
-	 */
-	public void setCount() {
-		this.count += 1;
+
+	public void setCount(int c) {
+		this.count += c;
 	}
 
 }
