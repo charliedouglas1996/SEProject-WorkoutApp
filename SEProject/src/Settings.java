@@ -1,41 +1,42 @@
 public class Settings {
 
-	private User user;
+	private User user=User.getInstance();
 	private boolean distanceUnits;
 	private boolean weightUnits;
 	private boolean heightUnits;
 
 	public String getDistanceUnit() {
-		return null;
+		if(distanceUnits) return "km";
+		else return "m";
 	}
 
 	public String getWeightUnit() {
-		return null;
+		if(weightUnits)return "kg";
+		else return "lb";
 	}
 
 	public String getHeightUnit() {
-		return null;
+		if(heightUnits) return "m";
+		else return "inches";
 	}
 
-	public void setDistanceUnit() {
-            System.out.println();
+	public void changeDistanceUnit() {
+		distanceUnits=!distanceUnits;
 	}
 
-	public void setWeightUnit() {
-            System.out.println();
+	public void changeWeightUnit() {
+		weightUnits=!weightUnits;
 	}
 	
-	public void setHeightUnit() {
-            System.out.println();
+	public void changeHeightUnit() {
+		heightUnits=!heightUnits;
 	}
 
 	public void changeUserWeight(float weight) {
-            System.out.println();
+        user.addWeight(weight);
 	}
 
 	public void changeUserHeight(float height) {
-            System.out.println();
-
+        user.addHeight(height);
 	}
-
 }
