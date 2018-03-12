@@ -10,6 +10,8 @@ public class User {
     private ArrayList<Workout> workoutList;
     private ArrayList<Exercise> exerciseList;
 
+    private User(){}
+    
     public static User getInstance() {
         return instance;
     }
