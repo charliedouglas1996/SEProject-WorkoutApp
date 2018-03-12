@@ -10,7 +10,7 @@ public class User {
 	private ArrayList<Workout> workoutList;
 	private ArrayList<Exercise> exerciseList;
 
-	private User() {
+	public User() {
 
 	}
 	public static void main(String[] args){
@@ -86,6 +86,10 @@ public class User {
 		// TODO - implement User.removeExercise
 		throw new UnsupportedOperationException();
 	}
+    
+    public Exercise selectExercise(){
+        return null;
+    }
 
 	public void displayWorkouts() {
 		// TODO - implement User.displayWorkouts
