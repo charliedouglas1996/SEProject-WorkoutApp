@@ -15,7 +15,7 @@ public abstract class Exercise {
 		setLink(hyperlink);
 		setNotes(newnote);
 		setEquipment(equip);
-		Exercisestats.setCount(c);
+		ExerciseStats.setCount(c);
 		}
 
 	public String getExerciseName() {

@@ -6,15 +6,9 @@ public class User {
 	private static User instance=new User();
 	private String userName;
 	private ArrayList<Float> userWeight;
-    private ArrayList<Float> userHeight;
+        private ArrayList<Float> userHeight;
 	private ArrayList<Workout> workoutList;
 	private ArrayList<Exercise> exerciseList;
-
-
-	public User() {
-
-	private User(){}
-
 
 	public static User getInstance() {
 		return instance;
