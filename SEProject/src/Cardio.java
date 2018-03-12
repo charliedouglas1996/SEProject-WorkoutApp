@@ -20,7 +20,7 @@ public class Cardio extends Exercise {
 	}
 
 	public void setDistance(int d) {
-
+		this.distance = d;
 	}
 
 }

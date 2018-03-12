@@ -7,20 +7,16 @@ public abstract class Exercise {
 	private String notes;
 	private String equipment;
 
-	/**
-	 * 
-	 * @param name
-	 * @param descrip
-	 * @param imglink
-	 * @param hyperlink
-	 * @param newnote
-	 * @param equip
-	 * @param c
-	 */
+
 	public Exercise(String name, String descrip, String imglink, String hyperlink, String newnote, String equip, int c) {
-		// TODO - implement Exercise.Exercise
-		throw new UnsupportedOperationException();
-	}
+		setExerciseName(name);
+		setDescription(descrip);
+		setImage(imglink);
+		setLink(hyperlink);
+		setNotes(newnote);
+		setEquipment(equip);
+		Exercisestats.setCount(c);
+		}
 
 	public String getExerciseName() {
 		return this.exerciseName;
@@ -31,8 +27,7 @@ public abstract class Exercise {
 	}
 
 	public String getImage() {
-		// TODO - implement Exercise.getImage
-		throw new UnsupportedOperationException();
+		return this.imageLink;
 	}
 
 	public String getLink() {
@@ -68,8 +63,7 @@ public abstract class Exercise {
 	 * @param imglink
 	 */
 	public void setImage(String imglink) {
-		// TODO - implement Exercise.setImage
-		throw new UnsupportedOperationException();
+		this.imageLink = imglink;
 	}
 
 	/**
