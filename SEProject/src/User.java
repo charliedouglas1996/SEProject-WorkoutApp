@@ -10,9 +10,10 @@ public class User {
 	private ArrayList<Exercise> exerciseList;
 
 
-	public User() {
 
-	private User(){}
+	private User(){
+
+	}
 
 
 	public static User getInstance() {
