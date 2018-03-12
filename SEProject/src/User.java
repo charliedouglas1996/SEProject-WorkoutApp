@@ -73,7 +73,7 @@ public class User {
 	}
 
 	public void viewWorkoutInfo(Workout w) {
-		System.out.println(w.getWorkoutName()+", "+w.getWorkoutDescription()+", "+w.getDuration()+", "+w.getWorkoutType());
+		System.out.println(w.getWorkoutName()+", "+w.getWorkoutDescription()+", "+w.getWorkoutDuration()+", "+w.getWorkoutType());
 	}
 
 	public void addWorkout(Workout w) {
