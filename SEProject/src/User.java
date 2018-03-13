@@ -10,14 +10,13 @@ public class User {
     private ArrayList<Workout> workoutList;
     private ArrayList<Exercise> exerciseList;
 
+    private User() {
 
-	private User(){
+    }
 
-	}
-
-	public static User getInstance() {
-		return instance;
-	}
+    public static User getInstance() {
+        return instance;
+    }
 
     public void setName(String name) {
         userName = name;
@@ -55,36 +54,34 @@ public class User {
         System.out.println(ex.getExerciseName() + ", " + ex.getDescription() + ", " + ex.getImage() + ", " + ex.getLink() + ", " + ex.getNotes() + ", " + ex.getEquipment());
     }
 
-
-	// adds a created exercise to the list of exercises
-	public void createExercise() {
-
-		Exercise exN = new Exercise();
-		exerciseList.add(e);
-	}
+    // adds a created exercise to the list of exercises
+    public void createExercise() {
+        //askhere
+        Exercise exN = new Exercise();
+        exerciseList.add(e);
+    }
 
     // adds a created exercise to the list of exercises
     public void addExercise(Exercise ex) {
         exerciseList.add(ex);
     }
 
-
     // TODO - edit the details of a specific exercise
     public void editExercise(Exercise ex) {
     }
 
-
-	// removes an exercise from the list of exercises
-	public void removeExercise(Exercise ex) {
-		exerciseList.remove(ex);
-	}
-    
-    public Exercise selectExercise(int n){
-		if(n<exerciseList.size()) return exerciseList.get(n);
-		System.out.println("Wrong exercise selected");
-		return null;
-
     // removes an exercise from the list of exercises
+    public void removeExercise(Exercise ex) {
+        exerciseList.remove(ex);
+    }
+
+    public Exercise selectExercise(int n) {
+        if (n < exerciseList.size()) {
+            return exerciseList.get(n);
+        }
+        System.out.println("Wrong exercise selected");
+        return null;
+        // removes an exercise from the list of exercises
     public void removeExercise(Exercise ex) {
         exerciseList.remove(ex);
     }

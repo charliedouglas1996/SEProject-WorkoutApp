@@ -8,7 +8,6 @@ public class ExerciseStats {
 		return this.count;
 	}
 
-
 	public void setCount(int c) {
 		this.count += c;
 	}
