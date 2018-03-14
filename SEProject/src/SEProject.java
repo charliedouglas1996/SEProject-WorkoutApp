@@ -74,7 +74,7 @@ public class SEProject {
         {
             System.out.println("Select a workout by entering a number");
             int n  = inputInt();
-            w = user.selectWorkout();
+            w = user.selectWorkout(n);
             user.removeWorkout(w);
         }
         else if (option==5)
@@ -104,7 +104,13 @@ public class SEProject {
         }
         else if (option==2)
         {
-            user.addExercise();
+            System.out.println("What type of Exercise would you like to add? For Muscle (M) or Cardio (C)");
+            String exType = input();
+            System.out.println("Name of the exercise?");
+            String exNName = input();
+
+
+            user.createExercise(exType);
         }
         else if (option==3)
         {
@@ -152,13 +158,13 @@ public class SEProject {
         {
             System.out.println("Please enter a new weight");
             double wei = inputDouble();
-            user.setWeight(wei);
+            user.addWeight(wei);
         }
         else if (option==3)
         {
             System.out.println("Please enter a new height");
             double hei = inputDouble();
-            user.setHeight(hei);
+            user.addHeight(hei);
         }
         else if (option==4)
         {
@@ -205,4 +211,4 @@ public class SEProject {
         return numInput;
     }
 }
-}
+
