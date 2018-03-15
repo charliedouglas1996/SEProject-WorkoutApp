@@ -106,9 +106,6 @@ public class SEProject {
         {
             System.out.println("What type of Exercise would you like to add? For Muscle (M) or Cardio (C)");
             String exType = input();
-            System.out.println("Name of the exercise?");
-            String exNName = input();
-
 
             user.createExercise(exType);
         }

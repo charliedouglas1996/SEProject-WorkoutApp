@@ -10,14 +10,13 @@ public class User {
     private ArrayList<Workout> workoutList;
     private ArrayList<Exercise> exerciseList;
 
+    private User() {
 
-	private User(){
+    }
 
-	}
-
-	public static User getInstance() {
-		return instance;
-	}
+    public static User getInstance() {
+        return instance;
+    }
 
     public void setName(String name) {
         userName = name;
@@ -43,6 +42,7 @@ public class User {
         userHeight.add((double) height);
     }
 
+    //******************************** EXERCISE METHODS **********************************//
     // display a list of all exercises
     public void displayExercises() {
         for (int i = 0; i < exerciseList.size(); i++) {
@@ -52,21 +52,52 @@ public class User {
 
     // show information about a specific exercise
     public void viewExerciseInfo(Exercise ex) {
-        System.out.println(ex.getExerciseName() + ", " + ex.getDescription() + ", " + ex.getImage() + ", " + ex.getLink() + ", " + ex.getNotes() + ", " + ex.getEquipment());
+        System.out.println(ex.getExerciseName() + ", " + ex.getDescription() + ", "  + ex.getEquipment());
     }
 
 
 	// adds a created exercise to the list of exercises
 	public void createExercise(String exType) {
-		Exercise exN;
-        System.out.println("Exercise Name");
-        //String exNName = input
-        if (exType.equalsIgnoreCase("m")){
-		    //exN = new Muscle();
-        }
-		//exerciseList.add(exN);
-	}
+        Exercise exN;
 
+        System.out.println("Name of the exercise?");
+        String exNName = input();
+        System.out.println("Description");
+        String des = input();
+       /* System.out.println("ImageLink");
+        String imL = input();
+        System.out.println("hyperLink");
+        String hyL = input();
+        System.out.println("newNote");
+        String nNote = input();*/
+        System.out.println("Equipment");
+        String equip = input();
+
+        if (exType.equalsIgnoreCase("m")) {
+            System.out.println("Number of reps");
+            int rep = inputInt();
+            System.out.println("weight");
+            double equipW = inputDouble();
+            System.out.println("Muscle Name/Type");
+            String mName = input();
+            exN = new Muscle(exNName, des, equip, 0, rep, equipW, mName);
+            exerciseList.add(exN);
+        }
+        else{
+            System.out.println("Time");
+            int t = inputInt();
+            System.out.println("Distance");
+            double d = inputDouble();
+            exN = new Cardio(exNName, des, equip, 0, t, d);
+            exerciseList.add(exN);
+        }
+    }
+
+
+    // adds a created exercise to the list of exercises
+    public void addExercise(Exercise ex) {
+        exerciseList.add(ex);
+    }
 
     // TODO - edit the details of a specific exercise
     public void editExercise(Exercise ex) {
@@ -81,12 +112,15 @@ public class User {
         System.out.println("Wrong exercise selected");
         return null;
     }
+
     // removes an exercise from the list of exercises
 
     public void removeExercise(Exercise ex) {
 
         exerciseList.remove(ex);
     }
+
+    //******************************** WORKOUT METHODS **********************************//
 
     public void displayWorkouts() {
         for (int i = 0; i < workoutList.size(); i++) {
@@ -117,5 +151,43 @@ public class User {
         }
         System.out.println("Wrong workout selected");
         return null;
+    }
+
+
+
+
+
+
+    // this method reads the users input
+    public static String input()
+    {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
+    // this method converts the input to an integer with the use of an exception to  eb=nsure that the input is an integer
+    public static int inputInt () {
+        int numInput = -1;
+        try {
+            numInput = Integer.parseInt(input());
+        } catch (NumberFormatException nfe) {
+        }
+
+        return numInput;
+    }
+
+    // this method converts the input to an integer with the use of an exception to  eb=nsure that the input is an integer
+    public static double inputDouble ()
+    {
+        double numInput = -1;
+        try
+        {
+            numInput = Double.parseDouble(input());
+        }
+        catch (NumberFormatException nfe)
+        {
+        }
+
+        return numInput;
     }
 }

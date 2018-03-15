@@ -1,17 +1,19 @@
 public class Cardio extends Exercise {
 
 	private int duration;
-	private float distance;
+	private double distance;
 
-	public Cardio(String name, String descrip, String imglink, String hyperlink, String newnote, String equip, int c, int time, float d) {
-		super(name,descrip,imglink,hyperlink,newnote,equip,c);
+	public Cardio(String name, String descrip, String equip, int c, int time, double d) {
+		super(name,descrip,equip,c);
+		duration = time;
+		distance = d;
 	}
 
 	public int getDuration() {
 		return this.duration;
 	}
 
-	public float getDistance() {
+	public double getDistance() {
 		return this.distance;
 	}
 

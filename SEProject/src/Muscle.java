@@ -1,18 +1,21 @@
 public class Muscle extends Exercise {
 
 	private int reps;
-	private float equipmentWeight;
+	private double equipmentWeight;
 	private String muscleType;
 
-	public Muscle(String name, String descrip, String imglink, String hyperlink, String newnote, String equip, int c, int rep, float weight, String muscleName) {
-		super(name,descrip,imglink,hyperlink,newnote,equip,c);
+	public Muscle(String name, String descrip, String equip, int c, int rep, double weight, String muscleName) {
+		super(name,descrip,equip,c);
+		reps = rep;
+		equipmentWeight = weight;
+		muscleType = muscleName;
 	}
 
 	public int getReps() {
 		return this.reps;
 	}
 
-	public float getEquipmentWeight() {
+	public double getEquipmentWeight() {
 		return this.equipmentWeight;
 	}
 
@@ -24,7 +27,7 @@ public class Muscle extends Exercise {
 		this.reps = rep;
 	}
 
-	public void setEquipmentWeight(float weight) {
+	public void setEquipmentWeight(double weight) {
 		this.equipmentWeight = weight;
 	}
 
