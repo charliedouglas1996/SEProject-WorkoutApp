@@ -11,12 +11,12 @@ public class WorkoutStats {
 		return this.totalTime;
 	}
 
-	public void setCount(int c) {
-		this.count = c;
+	public void setCount() {
+		this.count += 1;
 	}
 
 	public void setTotalTime(int exerciseDuration) {
-		this.totalTime = exerciseDuration;
+		this.totalTime += exerciseDuration;
 	}
 
 }

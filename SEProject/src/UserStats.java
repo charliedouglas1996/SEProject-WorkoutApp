@@ -7,24 +7,50 @@ public class UserStats {
 	private ArrayList<Workout> allWorkouts;
 	private ArrayList<Exercise> allExercises;
 
+        public UserStats() {
+        
+        
+        }
+        
 	public int exerciseCompleted() {
-		return 0;
+            int tempCount = 0;
+            for(int i=0; i>allExercises.size();i++){}
+                 //   tempCount += allExercises.get(i)
+            return tempCount;
 	}
 
 	public int workoutCompleted() {
-		return 0;
-	}
-
-	public float totalTime() {
-		return 0;
+		int tempCount = 0;
+            for(int i=0; i>allWorkouts.size();i++){}
+                    // tempCount += allWorkouts.get(i);
+            return tempCount;
 	}
 
 	public float averageTime() {
-		return 0;
+		float temp = 0;
+		for(int i = 0; i < allWorkouts.size(); i++){
+            temp += allWorkouts.get(i).getWorkoutDuration();
+
+        }
+		return temp;
 	}
 
-	public float BMI() {
-		return 0;
+	public float averageTime() {
+		float temp = 0;
+		for(int i = 0; i < allWorkouts.size(); i++){
+            temp += allWorkouts.get(i).getWorkoutDuration();
+
+        }
+		return temp / allWorkouts.size();
+	}
+
+	public double BMI() { //Work in progress (Not tested)
+            ArrayList<Double> tempW = user.getWeight();
+            ArrayList<Double> tempH = user.getHeight();
+            double BMIW = tempW.get(tempW.size() - 1);
+            double BMIH = tempH.get(tempH.size() - 1);
+            return (BMIW / BMIH) / BMIH;
+            
 	}
 
 }
