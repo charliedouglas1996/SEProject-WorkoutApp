@@ -5,7 +5,7 @@ public class Muscle extends Exercise {
 	private String muscleType;
 
 	public Muscle(String name, String descrip, String equip, int c, int rep, double weight, String muscleName) {
-		super(name,descrip,equip,c);
+		super(name,descrip,equip);
 		reps = rep;
 		equipmentWeight = weight;
 		muscleType = muscleName;

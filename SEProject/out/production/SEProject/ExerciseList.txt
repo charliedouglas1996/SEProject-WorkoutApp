@@ -1,0 +1,4 @@
+c#Treadmill Exercise#Running at various speeds and inclines#Treadmill#4#10#4.1
+c#Rowing Exercise#Rowing help build upper body#Rowing Machine#7#13#5.6
+m#Triceps Exercise#Building Tricep muscles #Weights#3#12#5.5#Triceps
+m#Quad Exercise#Building Quad Muscles#Weights#6#15#3.0#Quads

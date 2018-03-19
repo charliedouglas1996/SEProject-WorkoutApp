@@ -26,7 +26,7 @@ public class UserStats {
             return tempCount;
 	}
 
-	public float averageTime() {
+	/*public float averageTime() {
 		float temp = 0;
 		for(int i = 0; i < allWorkouts.size(); i++){
             temp += allWorkouts.get(i).getWorkoutDuration();
@@ -43,7 +43,7 @@ public class UserStats {
         }
 		return temp / allWorkouts.size();
 	}
-
+*/
 	public double BMI() { //Work in progress (Not tested)
             ArrayList<Double> tempW = user.getWeight();
             ArrayList<Double> tempH = user.getHeight();

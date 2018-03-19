@@ -4,13 +4,13 @@ public abstract class Exercise {
     private String exerciseName;
     private String description;
     private String equipment;
+    private ExerciseStats stats;
 
-    public Exercise(String name, String descrip, String equip, int c) {
+    public Exercise(String name, String descrip, String equip) {
         setExerciseName(name);
         setDescription(descrip);
         setEquipment(equip);
-        ExerciseStats stats = new ExerciseStats();
-        stats.setCount(c);
+        stats = new ExerciseStats();
     }
 
     public String getExerciseName() {

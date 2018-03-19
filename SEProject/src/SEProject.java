@@ -45,8 +45,10 @@ public class SEProject {
     }
     
     public static void workoutSelect(){
-        System.out.println("Welcome to the WORKOUT");
-        System.out.println("\n Please select one of the following: \n 1. View Workouts \n 2. Add Workout \n 3. Edit Workout \n 4. Remove Workout \n 5. return to Homepage \n 0. Exit System");
+        System.out.println("Welcome to the WORKOUT \n ..............");
+        System.out.println("\n Workouts Avaliable: ");
+        user.displayWorkouts();
+        System.out.println("\n Please select one of the following: \n 1. View Workout Info \n 2. Add Workout \n 3. Edit Workout \n 4. Remove Workout \n 5. return to Homepage \n 0. Exit System");
         
         int option = inputInt();
         Workout w;
@@ -56,11 +58,16 @@ public class SEProject {
         }
         else if(option ==1)
         {
-            user.displayWorkouts();
+
+            System.out.println("Select a workout by entering a number");
+            int n  = inputInt();
+            w = user.selectWorkout(n);
+            user.viewWorkoutInfo(w);
         }
         else if (option==2)
         {
-            user.addWorkout();
+            System.out.println("checker");
+            user.createWorkout();
         }
 
         else if (option==3)
@@ -76,6 +83,8 @@ public class SEProject {
             int n  = inputInt();
             w = user.selectWorkout(n);
             user.removeWorkout(w);
+
+            System.out.println("This workout " + w.getWorkoutName()+ " has been removed");
         }
         else if (option==5)
         {
@@ -90,7 +99,9 @@ public class SEProject {
     
     public static void exerciseSelect(){
         System.out.println("Welcome to the EXERCISE \n .........");
-        System.out.println("\n Please select one of the following: \n 1. View Exercise \n 2. Add Exercise \n 3. Edit Exercise \n 4. Remove Exercise \n 5. return to Homepage \n 0. Exit System");
+        System.out.println("\n Exercise Avaliable: ");
+        user.displayExercises();
+        System.out.println("\n Please select one of the following: \n 1. View Exercise Info \n 2. Add Exercise \n 3. Edit Exercise \n 4. Remove Exercise \n 5. return to Homepage \n 0. Exit System");
         
         int option = inputInt();
         Exercise ex;
@@ -100,7 +111,10 @@ public class SEProject {
         }
         else if(option ==1)
         {
-            user.displayExercises();
+            System.out.println("Select a exercise by entering a number");
+            int n  = inputInt();
+            ex = user.selectExercise(n);
+            user.viewExerciseInfo(ex);
         }
         else if (option==2)
         {
@@ -132,7 +146,8 @@ public class SEProject {
             System.out.println("That is an invalid option. Please try again");
             exerciseSelect();
         }
-        
+
+        exerciseSelect();
     }
     
     public static void setting(){
@@ -182,7 +197,7 @@ public class SEProject {
         return scanner.nextLine();
     }
     
-    // this method converts the input to an integer with the use of an exception to  eb=nsure that the input is an integer
+    // this method converts the input to an integer with the use of an exception to  ensure that the input is an integer
     public static int inputInt () {
         int numInput = -1;
         try {
@@ -193,7 +208,7 @@ public class SEProject {
         return numInput;
     }
 
-    // this method converts the input to an integer with the use of an exception to  eb=nsure that the input is an integer
+    // this method converts the input to a double with the use of an exception to  ensure that the input is an double
     public static double inputDouble ()
     {
         double numInput = -1;

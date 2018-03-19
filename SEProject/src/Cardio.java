@@ -4,7 +4,7 @@ public class Cardio extends Exercise {
 	private double distance;
 
 	public Cardio(String name, String descrip, String equip, int c, int time, double d) {
-		super(name,descrip,equip,c);
+		super(name,descrip,equip);
 		duration = time;
 		distance = d;
 	}
