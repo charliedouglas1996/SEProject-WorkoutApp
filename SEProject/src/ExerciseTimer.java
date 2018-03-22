@@ -1,69 +1,146 @@
+
 public class ExerciseTimer {
-
-	private int exerciseDuration;
-    private int seconds = 0;
-	private int minutes = 0;
-	boolean running = true;
     
+    private static Integer seconds = 0;
+    private static Integer minutes = 0;
+    private static Integer millis = 0;
+    private int Duration;
+    
+enum Scale{
 
-    public ExerciseTimer(int duration){
-    	exerciseDuration = duration;
+        MINUTE, SECOND
 
+    }
+
+   
+    
+    public ExerciseTimer(String type, int duration){
+        Duration = duration;
+        if(type.equals("seconds"))
+        {    startCount(Scale.SECOND, Duration);}
+        else if (type.equals("minutes"))
+        {    startCount(Scale.MINUTE, Duration);}
+        
+        System.out.println("Error: Wronge Type");
     }
 
     public void Pause() {
-    	Resume(); //Needs to be implemented
+        wait();
     }
+    
+    private void run(){
+        startCount(Scale.MINUTE, 1); //Test value
+    }
+    private static void startCount(Scale scale, Integer limit) {
 
-    public void Run() {
-        
+        boolean running = true;
+        boolean paused = false;
 
         while (running) {
-
+ 
             try {
 
-                Thread.sleep(1000);
+                Thread.sleep(10);
 
-                seconds += 1;
+                millis += 1;
 
-                if(seconds ==  60) { //Change 60 to lower number for easier testing
+                if(millis == 100 || (millis >= 100 && millis <= 101)){
+
+                    seconds+=1;
+
+                    millis = 0;
+
+                }
+
+                if(seconds == 60) {
 
                     minutes+= 1;
 
                     seconds = 0;
 
                 }
-                if(minutes==exerciseDuration){
-                    running = false;
-                }
 
-                System.out.println(minutes + " : " + seconds); //Prints every second. Comment if too many outputs
-            } 
-            catch (InterruptedException e) {
+                System.out.println(numDisplay(minutes) + " : " + numDisplay(seconds) + " : " + numDisplay(millis));
+
+                setLimit(scale, limit);
+
+            } catch (InterruptedException e) {
 
                 running = false;
 
-                e.printStackTrace();
+                System.out.println("ERROR: " + e.getCause());
+
             }
 
         }
+        
         Complete();
-	}
+    }
 
-	public void Resume() {
+ 
 
-	}
+    private static String numDisplay(Integer num) {
 
-	public void Complete() {
-		System.out.println("Exercise Complete");
-	}
+        if(num.toString().length() == 1){
 
-	public int getExerciseDuration() { 
-		return this.exerciseDuration;
-	}
+            return "0" + num;
 
-	public void setExerciseDuration(int time) {
-		this.exerciseDuration = time;
-	}
+        }
 
+        return num.toString();
+
+    }
+
+ 
+
+    private static void setLimit(Scale s, Integer limit) {
+
+        switch (s) {
+
+            case MINUTE:
+
+                if(minutes >= limit) {
+
+                    System.exit(0);
+
+                }
+
+                break;
+
+ 
+
+            case SECOND:
+
+                if(seconds >= limit) {
+
+                    System.exit(0);
+
+                }
+
+                break;
+
+        }
+    
+        
+    }
+    
+
+
+    public void Resume() {
+
+    }
+
+    public static void Complete() {
+        System.out.println("Exercise Complete");
+    }
+
+    public int getExerciseDuration() { 
+        return this.Duration;
+    }
+
+    public void setExerciseDuration(int time) {
+        this.Duration = time;
+    }
 }
+
+ 
